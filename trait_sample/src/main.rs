@@ -148,3 +148,19 @@ impl Drop for Firework {
         println!("BOOM times {}!!!", self.strength);
     }
 }
+
+trait Bar {
+    fn method(&self) -> String;
+}
+
+impl Bar for u8 {
+    fn method(&self) -> String {
+        format!("u8:{}", *self)
+    }
+}
+
+impl Bar for String {
+    fn method(&self) -> String {
+        format!("String: {}", *self)
+    }
+}
